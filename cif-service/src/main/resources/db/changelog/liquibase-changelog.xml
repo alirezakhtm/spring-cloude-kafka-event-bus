@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Alireza" id="create_table.tbl_user.01">
+        <createTable tableName="tbl_user" catalogName="db_bank">
+            <column name="ID" type="int"/>
+            <column name="FIRSTNAME" type="text" />
+            <column name="LASTNAME" type="text" />
+            <column name="IDENTITY_NUMBER" type="text" />
+        </createTable>
+
+    </changeSet>
+
+
+    <changeSet id="create_table.tbl_user.02" author="Alireza">
+        <addPrimaryKey tableName="tbl_user" columnNames="ID"  catalogName="db_bank"/>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_user.03" author="Alireza">
+        <addAutoIncrement tableName="tbl_user" columnName="ID" catalogName="db_bank" columnDataType="int"/>
+    </changeSet>
+
+    <changeSet id="insert date_table.tbl_user.01" author="Alireza">
+        <loadData tableName="tbl_user" catalogName="db_bank" encoding="UTF-8" file="db/changelog/user.csv"/>
+    </changeSet>
+
+</databaseChangeLog>
