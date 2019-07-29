@@ -26,8 +26,17 @@
         <addAutoIncrement tableName="tbl_user" columnName="ID" catalogName="db_bank" columnDataType="int"/>
     </changeSet>
 
-    <changeSet id="insert date_table.tbl_user.01" author="Alireza">
-        <loadData tableName="tbl_user" catalogName="db_bank" encoding="UTF-8" file="db/changelog/user.csv"/>
+    <changeSet id="insert_date_table.tbl_user.01" author="Alireza">
+        <!--<loadData tableName="tbl_user" catalogName="db_bank" encoding="UTF-8" file="db/changelog/user.csv"/>-->
+        <loadData catalogName="db_bank"
+                  encoding="UTF-8"
+                  file="db/changelog/user.csv"
+                  tableName="tbl_user">
+            <column name="ID" type="NUMERIC"/>
+            <column name="FIRSTNAME" type="STRING" />
+            <column name="LASTNAME" type="STRING"/>
+            <column name="IDENTITY_NUMBER" type="STRING" />
+        </loadData>
     </changeSet>
 
 </databaseChangeLog>

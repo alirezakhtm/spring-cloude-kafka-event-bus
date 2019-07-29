@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+    <changeSet id="create_table.tbl_account.01" author="Alireza">
+        <createTable tableName="tbl_account" catalogName="db_bank">
+            <column name="ID" type="int" />
+            <column name="USERID" type="int" />
+            <column name="BALANCE" type="text" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_account.02" author="Alireza">
+        <addPrimaryKey tableName="tbl_account" columnNames="ID" catalogName="db_bank"/>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_account.03" author="Alireza">
+        <addAutoIncrement tableName="tbl_account" columnName="ID" catalogName="db_bank" columnDataType="int"/>
+    </changeSet>
+
+
+</databaseChangeLog>
