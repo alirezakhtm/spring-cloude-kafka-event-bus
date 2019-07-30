@@ -24,5 +24,13 @@
         <addAutoIncrement tableName="tbl_account" columnName="ID" catalogName="db_bank" columnDataType="int"/>
     </changeSet>
 
+    <changeSet id="insert_data.tbl_account.01" author="Alireza">
+        <loadData tableName="tbl_account" catalogName="db_bank" file="db/changelog/user-account.csv" encoding="UTF-8">
+            <column name="ID" type="NUMERIC"/>
+            <column name="USERID" type="NUMERIC"/>
+            <column name="BALANCE" type="STRING"/>
+        </loadData>
+    </changeSet>
+
 
 </databaseChangeLog>

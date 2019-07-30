@@ -27,11 +27,7 @@
     </changeSet>
 
     <changeSet id="insert_date_table.tbl_user.01" author="Alireza">
-        <!--<loadData tableName="tbl_user" catalogName="db_bank" encoding="UTF-8" file="db/changelog/user.csv"/>-->
-        <loadData catalogName="db_bank"
-                  encoding="UTF-8"
-                  file="db/changelog/user.csv"
-                  tableName="tbl_user">
+        <loadData catalogName="db_bank" encoding="UTF-8" file="db/changelog/user.csv" tableName="tbl_user">
             <column name="ID" type="NUMERIC"/>
             <column name="FIRSTNAME" type="STRING" />
             <column name="LASTNAME" type="STRING"/>

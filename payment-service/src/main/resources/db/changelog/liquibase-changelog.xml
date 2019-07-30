@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_table.tbl_payment.01" author="Alireza">
+        <createTable tableName="tbl_payment" catalogName="db_bank">
+            <column type="INT" name="ID"/>
+            <column type="INT" name="USERID_PAYER"/>
+            <column type="INT" name="USERID_RECEIVER"/>
+            <column type="DATE" name="DATE_PAYMENT"/>
+            <column type="TEXT" name="AMOUNT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_payment.02" author="Alireza">
+        <addPrimaryKey tableName="tbl_payment" columnNames="ID" catalogName="db_bank"/>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_payment.03" author="Alireza">
+        <addAutoIncrement tableName="tbl_payment" columnName="ID" catalogName="db_bank" columnDataType="int"/>
+    </changeSet>
+
+</databaseChangeLog>
