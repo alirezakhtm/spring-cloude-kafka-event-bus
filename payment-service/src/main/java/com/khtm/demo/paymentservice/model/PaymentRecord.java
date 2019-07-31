@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "tbl_payment", catalog = "db_bank")
 public class PaymentRecord {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
     @Column(name = "USERID_PAYER")

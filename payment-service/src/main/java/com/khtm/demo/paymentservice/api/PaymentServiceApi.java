@@ -1,10 +1,7 @@
 package com.khtm.demo.paymentservice.api;
 
 import com.khtm.demo.paymentservice.model.PaymentRecord;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +15,5 @@ public interface PaymentServiceApi {
     @RequestMapping(method = RequestMethod.POST, value = "/receiver")
     List<PaymentRecord> getPaymentByUserIdReceiver(@RequestParam(name = "id") long userId);
     @RequestMapping(method = RequestMethod.POST, value = "/add-record")
-    void saveRecord(PaymentRecord paymentRecord);
+    void saveRecord(@RequestBody PaymentRecord paymentRecord);
 }
