@@ -1,5 +1,6 @@
 package com.khtm.demo.producertester;
 
+import com.khtm.demo.bulkpaymentservice.model.User2;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

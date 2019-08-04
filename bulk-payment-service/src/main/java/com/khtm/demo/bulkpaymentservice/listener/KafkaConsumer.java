@@ -18,7 +18,7 @@ public class KafkaConsumer {
         logger.info("Consume Message is > " + message);
     }
 
-    @KafkaListener(topics = "kafka_example_json_5", groupId = "group_json",
+    @KafkaListener(topics = "kafka_example_json_7", groupId = "group_json",
             containerFactory = "userConcurrentKafkaListenerContainerFactory")
     public void consumeJson(User2 user){
         logger.info("Consume JSON Message is > " + user);

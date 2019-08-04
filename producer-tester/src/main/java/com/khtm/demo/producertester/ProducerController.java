@@ -1,5 +1,6 @@
 package com.khtm.demo.producertester;
 
+import com.khtm.demo.bulkpaymentservice.model.User2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +29,7 @@ public class ProducerController {
         User2 user = new User2();
         user.setFirstName(firstName);
         user.setLastName(lastName);
-        userKafkaTemplate.send("kafka_example_json_5", user);
+        userKafkaTemplate.send("kafka_example_json_7", user);
         return "user was published successfully.";
     }
 

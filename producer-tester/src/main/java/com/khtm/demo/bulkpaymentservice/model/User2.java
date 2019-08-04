@@ -1,4 +1,4 @@
-package com.khtm.demo.producertester;
+package com.khtm.demo.bulkpaymentservice.model;
 
 public class User2 {
 
