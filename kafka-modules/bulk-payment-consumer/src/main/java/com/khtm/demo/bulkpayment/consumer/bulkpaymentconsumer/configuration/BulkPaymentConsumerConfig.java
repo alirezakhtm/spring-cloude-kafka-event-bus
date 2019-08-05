@@ -33,6 +33,32 @@ public class BulkPaymentConsumerConfig {
     @Autowired
     private DataSource dataSource;
 
+    // General beans
+
+    @Bean
+    public Map<String, Object> getConfigGeneral(){
+        Map<String, Object> config = new HashMap<>();
+        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_SERVER_ADDRESS);
+        config.put(ConsumerConfig.GROUP_ID_CONFIG, "group-id");
+        config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        return config;
+    }
+
+    @Bean
+    public ConsumerFactory<Object, Object> generalConsumerFactory(){
+        return new DefaultKafkaConsumerFactory<Object, Object>(getConfigGeneral());
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<Object, Object> generalFactory(){
+        ConcurrentKafkaListenerContainerFactory<Object, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(generalConsumerFactory());
+        return factory;
+    }
+
+    // Beans for bulk-payment
+
     @Bean
     public Map<String, Object> getConfigBulkPaymentKafkaConsumer(){
         Map<String, Object> config = new HashMap<>();

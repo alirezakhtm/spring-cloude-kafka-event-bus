@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_table.tbl_request_bulkpayment.01" author="Alireza">
+        <createTable tableName="tbl_request_bulkpayment" catalogName="db_bank">
+            <column name="ID" type="INT"/>
+            <column name="REQUEST" type="TEXT"/>
+            <column name="REQUEST_DATE" type="TEXT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_request_bulkpayment.02" author="Alireza">
+        <addPrimaryKey tableName="tbl_request_bulkpayment" columnNames="ID" catalogName="db_bank"/>
+    </changeSet>
+
+    <changeSet id="create_table.tbl_request_bulkpayment.03" author="Alireza">
+        <addAutoIncrement tableName="tbl_request_bulkpayment" columnName="ID" catalogName="db_bank" columnDataType="INT"/>
+    </changeSet>
+
+</databaseChangeLog>

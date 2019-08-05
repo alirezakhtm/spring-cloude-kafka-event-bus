@@ -13,6 +13,7 @@
             <column name="USER_ID_PAYER" type="INT"/>
             <column name="USER_ID_RECEIVER" type="INT"/>
             <column name="PAYMENT_DATE" type="DATE"/>
+            <column name="AMOUNT" type="TEXT"/>
         </createTable>
     </changeSet>
 

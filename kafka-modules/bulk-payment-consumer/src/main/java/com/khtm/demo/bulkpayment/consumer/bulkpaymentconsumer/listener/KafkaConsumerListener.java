@@ -14,8 +14,10 @@ public class KafkaConsumerListener {
 
     @KafkaListener(topics = "bulk_payment", groupId = "group-json")
     public void DoBulkPayment(BulkPayment bulkPayment){
+        /**
+         * Process must be inserted here.
+         * */
         logger.info("Received new bulk-payment request from kafka queue.");
-
     }
 
 }
