@@ -23,9 +23,9 @@ public class BulkPaymentService implements BulkPaymentServiceAPI {
 
     @Override
     public void sendBulkPaymentRequest(BulkPayment bulkPayment) {
-        kafkaTemplate.send("bulk_payment", bulkPayment);
+        kafkaTemplate.send("bulk_payment_request", bulkPayment);
         String jsonRequest = new GsonBuilder().create().toJson(bulkPayment, BulkPayment.class);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         RequestBulkPayment requestBulkPayment = new RequestBulkPayment();
         requestBulkPayment.setRequest(jsonRequest);

@@ -1,7 +1,6 @@
 package com.khtm.demo.bulkpayment.consumer.bulkpaymentconsumer.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "tbl_bulkpayment", catalog = "db_bank")
@@ -16,8 +15,7 @@ public class BulkPayment {
     @Column(name = "USER_ID_RECEIVER")
     private long userIdReceiver;
     @Column(name = "PAYMENT_DATE")
-    @Temporal(TemporalType.DATE)
-    private Date paymentDate;
+    private String paymentDate;
     @Column(name = "AMOUNT")
     private String amount;
 
@@ -45,11 +43,11 @@ public class BulkPayment {
         this.userIdReceiver = userIdReceiver;
     }
 
-    public Date getPaymentDate() {
+    public String getPaymentDate() {
         return paymentDate;
     }
 
-    public void setPaymentDate(Date paymentDate) {
+    public void setPaymentDate(String paymentDate) {
         this.paymentDate = paymentDate;
     }
 

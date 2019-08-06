@@ -1,7 +1,6 @@
 package com.khtm.demo.bulkpayment.producer.bulkpaymentproducer.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "tbl_request_bulkpayment", catalog = "db_bank")
