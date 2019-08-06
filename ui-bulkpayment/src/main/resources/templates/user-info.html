@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Kafka - Demo</title>
+
+    <link rel="stylesheet" th:href="@{jquery-ui.css}"/>
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/site.css}"/>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Kafka Demo</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/user-info">User Info</a></li>
+            <li><a href="/account-info">Account Info</a></li>
+            <li><a href="/request-log">Request Log</a></li>
+            <li><a href="/bulk-payment">Bulk Payment</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h3>User information</h3>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Identity Number</td>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.id}">ID</td>
+            <td th:text="${user.firstname}">FIRSTNAME</td>
+            <td th:text="${user.lastname}">LASTNAME</td>
+            <td th:text="${user.identityNumber}">IDENTITYNUMBER</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
